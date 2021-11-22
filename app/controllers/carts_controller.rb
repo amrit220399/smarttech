@@ -1,6 +1,7 @@
+
 class CartsController < ApplicationController
   before_action :set_cart, only: %i[ show edit update destroy ]
-
+  require "active_merchant/billing/rails"
   # GET /carts or /carts.json
   def index
     @carts = Cart.all
@@ -9,7 +10,51 @@ class CartsController < ApplicationController
   def empty
   end
 
+  def purchase_complete
+  end
+  
   def checkout
+    
+  	if request.post?
+
+      amount = session[:amount]
+  ActiveMerchant::Billing::Base.mode = :test
+  
+  # Create a new credit card object
+  credit_card = ActiveMerchant::Billing::CreditCard.new(
+    :number     => params[:cardnumber],
+    :month      => params[:month],
+    :year       => params[:year],
+    :first_name => params[:cardname],
+    :last_name  => params[:cardname],
+    :verification_value  => params[:cvv]
+  )
+  
+  
+  if credit_card.valid?
+    # Create a gateway object to the TrustCommerce service
+    gateway = ActiveMerchant::Billing::TrustCommerceGateway.new(
+      :login    => 'TestMerchant',
+      :password => 'password'
+    )
+  
+  
+  
+    # Authorize for $10 dollars (1000 cents)
+    response = gateway.authorize(amount.to_i, credit_card)
+  
+    if response.success?
+      # Capture the money
+      #Triger the mailer
+      session[:cart]=nil
+      gateway.capture(amount.to_i, response.authorization)
+      redirect_to :action=>:purchase_complete
+    end
+    else
+      flash[:notice] = "Invalid credit card. Give proper inputs"
+      render :action=>:checkout
+    end
+   end
   end
   # GET /carts/1 or /carts/1.json
   def show

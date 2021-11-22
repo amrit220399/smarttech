@@ -1,59 +1,103 @@
 
-Total amount for Checkout : Rs. <%= session[:amount] %>
 
 <%= form_with do |form| %>
 
 
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
-  </div>
+ 
 
-<div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
-  </div>
+<div id="myCheckout">
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="/action_page.php">
 
+        <div class="row">
+          <div class="col-50">
+            <h3>Billing Address</h3>
+            <label for="fname"><i class="bi bi-person-circle"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+            <label for="email"><i class="bi bi-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="john@example.com">
+            <label for="adr"><i class="bi bi-house"></i> Address</label>
+            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+            <label for="city"><i class="bi bi-signpost"></i> City</label>
+            <input type="text" id="city" name="city" placeholder="New York">
 
-  <div class="field">
-    <%= form.label :number %>
-    <%= form.text_field :number %>
-  </div>
+            <div class="row">
+              <div class="col-50">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" placeholder="NY">
+              </div>
+              <div class="col-50">
+                <label for="zip">Zip</label>
+                <input type="text" id="zip" name="zip" placeholder="10001">
+              </div>
+            </div>
+          </div>
 
-  <%= form.label :date_of_expiry %><br />
-      <select name="month" id="check_out_month">
-    <option selected value="01">Janurary 
-    <option  value="02">Feburary
-    <option  value="03">March
-    <option  value="04">April 
-    <option  value="05">May 
-    <option  value="06">June 
-    <option  value="07">July 
-    <option  value="08">August 
-    <option  value="09">September 
-    <option  value="10">October 
-    <option  value="11">November 
-    <option  value="12">December 
-    </select>
-    <select name="year" id=check_out_year">
+          <div class="col-50">
+            <h3>Payment</h3>
+         
+           
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+            <label for="ccnum"><i class="bi bi-credit-card"></i>Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+           <%= form.label :date_of_expiry %>
+            <select name="month" id="check_out_month">
+                <option selected value="01">Janurary 
+                <option  value="02">Feburary
+                <option  value="03">March
+                <option  value="04">April 
+                <option  value="05">May 
+                <option  value="06">June 
+                <option  value="07">July 
+                <option  value="08">August 
+                <option  value="09">September 
+                <option  value="10">October 
+                <option  value="11">November 
+                <option  value="12">December 
+                </select>
+                <select name="year" id=check_out_year">
     
-    <option  value="2021">2021
-    <option  value="2022">2022
-    <option  value="2023">2023
-    <option  value="2024">2024
-    <option  value="2025">2025
-      <option  value="2026">2026
-        <option  value="2027">2027
-          <option  value="2028">2028
-            <option  value="2029">2029
-  </select>
+                <option  value="2021">2021
+                <option  value="2022">2022
+                <option  value="2023">2023
+                <option  value="2024">2024
+                <option  value="2025">2025
+                <option  value="2026">2026
+                <option  value="2027">2027
+                <option  value="2028">2028
+                <option  value="2029">2029
+            </select>
+            <br/><br/>
+            <div class="row">
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="352">
+              </div>
+            </div>
+          </div>
 
-  <div class="field">
-    <%= form.label :verification_value %>
-    <%= form.text_field :verification_value %>
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+               
+      </form>
+    </div>
   </div>
+    
+  <div class="col-25">
+    <div class="container">
+      <h4>Cart</h4>
+     
+      <hr>
+      <p>Total <span class="price" style="color:black"><b> Rs.<%= session[:amount] %></b></span></p>
 
-  <div class="actions">
-    <%= form.submit "pay"%>
+       <%= form.submit "Proceed to Pay", class: "btn btn-primary" %>
+    </div>
   </div>
+</div>
+</div>
 <% end %>

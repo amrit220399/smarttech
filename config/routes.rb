@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :cart_items
   resources :carts do
     get 'checkout' , to:'carts#checkout'
+    post 'checkout' , to:'carts#checkout'
+    get 'purchase_complete' , to:'carts#purchase_complete'
   end
   resources :stores
   get 'cart/empty' , to:'carts#empty'
@@ -12,6 +14,7 @@ Rails.application.routes.draw do
   get 'admin/dashboard'
   get 'home/index'
   get 'home/mobile_gallery'
+  get 'home/search_results'
   devise_for :users
 
   root 'home#index' 
