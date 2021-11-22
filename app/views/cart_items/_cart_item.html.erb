@@ -1,0 +1,10 @@
+<tr id="current_item">
+
+
+
+	<td><%= cart_item.quantity %> &times;</td>
+    <td><%= image_tag(cart_item.store.product_image,height:"75px", width:"50px") %></td>
+	<td><%= cart_item.store.product_name %></td>
+    <td><%= link_to '<i class="bi bi-trash" style="color:red; font-size:14px" >Delete</i>'.html_safe, "", class: "btn btn-link" %></td>
+	<td class="item_price">&#8377;<%= cart_item.total_price %></td>
+</tr>

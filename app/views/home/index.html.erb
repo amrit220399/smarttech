@@ -1,0 +1,368 @@
+<div id="home" class="width_calc">
+		<!--try top banner main wrapper Start-->
+		<div class="try_top_banner_wrapper">
+			<div class="try_top_side_img">
+				<img src="/assets/about_bg.jpg" alt="about_bg">
+			</div>
+			<div class="try_circle_first hidden-xs hidden-sm">
+				<img src="/assets/right_cycle1.png" alt="circle">
+			</div>
+			<div class="try_circle_second hidden-xs hidden-sm">
+				<img src="/assets/right_cycle2.png" alt="circle">
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
+						<div class="try_logo_wrapper try_logo_wrapper_top">
+							<a href="/home/index" style="background-color: transparent">
+							<img src="/assets/logo_smart.png" alt="logo" height="100px" width="140px" >
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
+						<div class="try_top_login_wrapper">
+							<ul>
+								<% if !user_signed_in? %>
+								<li><a href="/users/sign_in">Login/Signup</a>
+								</li>
+								<% else %>
+								<li><a href="/users/edit"><i class="bi bi-person"><%= current_user.email%></i></a></li>
+								<%end%>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="slider-area">
+							<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+								<div class="carousel-inner" role="listbox">
+									<div class="item active">
+										<div class="carousel-captions caption-1">
+											<div class="container">
+												<div class="row">
+													<div class="col-lg-8 col-md-6 col-sm-12 col-xs-12 hot_slider_custom_col_img_cont">
+														<div class="content lr_banner_content_inner_wrapper">
+															<div id="clockdiv" data-animation="animated flipInY">
+																<div><span class="days"></span>
+																	<div class="smalltext">Days</div>
+																</div>
+																<div><span class="hours"></span>
+																	<div class="smalltext">Hours</div>
+																</div>
+																<div><span class="minutes"></span>
+																	<div class="smalltext">Minutes</div>
+																</div>
+																<div><span class="seconds"></span>
+																	<div class="smalltext">Seconds</div>
+																</div>
+															</div>
+															<div id="indexLaunch">
+															<h3 data-animation="animated fadeInLeft">Launching New Phone @ $999</h3>
+															<ul class="try_slider_list">
+																<li data-animation="animated fadeInLeft"><a href="#">AI Dual Camera</a>
+																</li>
+																<li data-animation="animated fadeInLeft"><a href="#">Octa-core Processor</a>
+																</li>
+																<li data-animation="animated fadeInLeft"><a href="#">6 GB Ram</a>
+																</li>
+															</ul>
+															</div>
+															<ul class="try_slider_btn">
+																<li data-animation="animated fadeInLeft"><a href="#">Learn More</a>
+																</li>
+																<li data-animation="animated fadeInLeft"><a href="#">Buy Now</a>
+																</li>
+															</ul>
+															<div class="clear"></div>
+
+														</div>
+													</div>
+													<div class="col-lg-4 col-md-6 col-sm-6 col-xs-8">
+														<div class="try_slider_img_Wrapper try_slider_img_header_Wrapper" data-animation="animated bounceInUp">
+															<img src="/assets/banner_mob1.png" alt="banner_mob1">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class=" carousel-captions caption-2">
+											<div class="container">
+												<div class="row">
+													<div class="col-lg-8 col-md-6 col-sm-12 col-xs-12 hot_slider_custom_col_img_cont">
+														<div class="content lr_banner_content_inner_wrapper">
+															<div id="clockdiv2" data-animation="animated flipInY">
+																<div><span class="days"></span>
+																	<div class="smalltext">Days</div>
+																</div>
+																<div><span class="hours"></span>
+																	<div class="smalltext">Hours</div>
+																</div>
+																<div><span class="minutes"></span>
+																	<div class="smalltext">Minutes</div>
+																</div>
+																<div><span class="seconds"></span>
+																	<div class="smalltext">Seconds</div>
+																</div>
+															</div>
+															<div id="indexLaunch">
+															<h3 data-animation="animated fadeInLeft">Launching New Phone @ $999</h3>
+															<ul class="try_slider_list">
+																<li data-animation="animated fadeInLeft"><a href="#">AI Dual Camera</a>
+																</li>
+																<li data-animation="animated fadeInLeft"><a href="#">Octa-core Processor</a>
+																</li>
+																<li data-animation="animated fadeInLeft"><a href="#">6 GB Ram</a>
+																</li>
+															</ul>
+															<ul class="try_slider_btn">
+																<li data-animation="animated fadeInLeft"><a href="#">Learn More</a>
+																</li>
+																<li data-animation="animated fadeInLeft"><a href="#">Buy Now</a>
+																</li>
+															</ul>
+															</div>
+															<div class="clear"></div>
+														</div>
+													</div>
+													<div class="col-lg-4 col-md-6 col-sm-6 col-xs-8">
+														<div class="try_slider_img_Wrapper try_slider_img_header_Wrapper" data-animation="animated bounceInUp">
+															<img src="/assets/banner_mob1.png" alt="banner_mob1">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="carousel-captions caption-3">
+											<div class="container">
+												<div class="row">
+													<div class="col-lg-8 col-md-6 col-sm-12 col-xs-12 hot_slider_custom_col_img_cont">
+														<div class="content lr_banner_content_inner_wrapper">
+															<div id="clockdiv3" data-animation="animated flipInY">
+																<div><span class="days"></span>
+																	<div class="smalltext">Days</div>
+																</div>
+																<div><span class="hours"></span>
+																	<div class="smalltext">Hours</div>
+																</div>
+																<div><span class="minutes"></span>
+																	<div class="smalltext">Minutes</div>
+																</div>
+																<div><span class="seconds"></span>
+																	<div class="smalltext">Seconds</div>
+																</div>
+															</div>
+															<div id="indexLaunch">
+															<h3 data-animation="animated fadeInLeft">Launching New Phone @ $999</h3>
+															<ul class="try_slider_list">
+																<li data-animation="animated fadeInLeft"><a href="#">AI Dual Camera</a>
+																</li>
+																<li data-animation="animated fadeInLeft"><a href="#">Octa-core Processor</a>
+																</li>
+																<li data-animation="animated fadeInLeft"><a href="#">6 GB Ram</a>
+																</li>
+															</ul>
+															<ul class="try_slider_btn">
+																<li data-animation="animated fadeInLeft"><a href="#">Learn More</a>
+																</li>
+																<li data-animation="animated fadeInLeft"><a href="#">Buy Now</a>
+																</li>
+															</ul>
+															</div>
+															<div class="clear"></div>
+														</div>
+													</div>
+													<div class="col-lg-4 col-md-6 col-sm-6 col-xs-8">
+														<div class="try_slider_img_Wrapper try_slider_img_header_Wrapper" data-animation="animated bounceInUp">
+															<img src="/assets/banner_mob1.png" alt="banner_mob1">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<ol class="carousel-indicators">
+										<li data-target="#carousel-example-generic" data-slide-to="0" class="active"><span class="number"></span>
+										</li>
+										<li data-target="#carousel-example-generic" data-slide-to="1" class=""><span class="number"></span>
+										</li>
+										<li data-target="#carousel-example-generic" data-slide-to="2" class=""><span class="number"></span>
+										</li>
+									</ol>
+									<div class="carousel-nevigation">
+										<a class="prev" href="#carousel-example-generic" role="button" data-slide="prev">	<i class="fa fa-angle-left"></i>
+										</a>
+										<a class="next" href="#carousel-example-generic" role="button" data-slide="next"> <i class="fa fa-angle-right"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--try top banner main wrapper End-->
+		<header class="main-header">
+			<div class="container">
+				<div class="row">
+					<!-- Main Box -->
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+						<div class="try_logo_wrapper">
+							<a href="/home/index" style="background-color: transparent">
+								<img src="/assets/logo_smart.png" alt="logo" height="60px" width="100px">
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+						<div class="main-box">
+							<div class="main-box">
+								<div class="auto-container">
+									<div class="outer-container clearfix">
+										<!--Logo Box-->
+										<!--Nav Outer-->
+										<div class="nav-outer clearfix">
+											<!-- Main Menu -->
+											<nav class="main-menu">
+												<div class="navbar-header">
+													<!-- Toggle Button -->
+													<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span>
+														<span class="icon-bar"></span>
+														<span class="icon-bar"></span>
+													</button>
+												</div>
+												<div class="navbar-collapse collapse scroll-nav clearfix">
+													<ul class="navigation clearfix">
+														<li><a href="/home/index">Home</a>
+														</li>
+														<li><a href="/home/mobile_gallery">Mobile</a>
+														</li>
+														<li><a href="#"><i class="material-icons">favorite</i></a></li>
+														<% if session[:cart_id].nil? %>
+															<li><a href="/cart/empty"><i class="material-icons">shopping_cart</i></a></li>
+														<% else %>
+															<li><%= link_to '<i class="material-icons">shopping_cart</i>'.html_safe, cart_path(:id=> session[:cart_id]) %></li>
+															
+														<% end %>
+													
+														<li><a href="#"><i class="material-icons">card_travel</i></a></li>
+														<li><a href="/users/edit"><i class="material-icons">person</i></a></li>
+
+														<li><a href="/admin/login_admin" style="float:right">Admin</a></li>
+
+										
+													</ul>
+												</div>
+											</nav>
+											<!-- Main Menu End-->
+										</div>
+										<!--Nav Outer End-->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+	</div>
+
+
+
+
+	<div class="try_recent_mobail_main_wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="try_recent_mob_heading_wrapper">
+							<h2>Mobile Phones</h2>
+							<p><span class="try_left_dots"></span>20% OFF<span class="try_right_dots"></span>
+							</p>
+						</div>
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="try_rc_slider_inner_wrapper">
+							<div class="owl-carousel owl-theme">
+								<div class="item">
+									<div class="try_rc_mob_box_wrapper">
+										<div class="try_rc_mob_img">
+											<img width="300" height="205"  src="/assets/rs3.png" >
+											<h5>Sale</h5>
+											<a href="#"><i class="fa fa-heart"></i></a>
+										</div>
+										<div class="try_rc_mob_img_cont">
+											<h2>Apple iPhone XS Max</h2>
+											<h3>64GB</h3>
+										</div>
+										<div class="try_rc_mob_img_cont_bottom">
+											<p>$589.97</p>	<del>$750</del>
+											<div class="try_mob_btn_wrapper">	<a target="#" href="#">Buy Now</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="try_rc_mob_box_wrapper">
+										<div class="try_rc_mob_img">
+											<img src="/assets/rs2.png" alt="mobail">
+											<h5>Sale</h5>
+											<a href="#"><i class="fa fa-heart"></i></a>
+										</div>
+										<div class="try_rc_mob_img_cont">
+											<h2>Mobile 101</h2>
+											<h3>(2GB  |  32GB)</h3>
+										</div>
+										<div class="try_rc_mob_img_cont_bottom">
+											<p>$6499</p>	<del>$7500</del>
+											<div class="try_mob_btn_wrapper">	<a href="#">Buy Now</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="try_rc_mob_box_wrapper">
+										<div class="try_rc_mob_img">
+											<img src="/assets/rs3.png" alt="mobail">
+											<h5>Sale</h5>
+											<a href="#"><i class="fa fa-heart"></i></a>
+										</div>
+										<div class="try_rc_mob_img_cont">
+											<h2>Mobile 101</h2>
+											<h3>(2GB  |  32GB)</h3>
+										</div>
+										<div class="try_rc_mob_img_cont_bottom">
+											<p>$6499</p>	<del>$7500</del>
+											<div class="try_mob_btn_wrapper">	<a href="#">Buy Now</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">
+									<div class="try_rc_mob_box_wrapper">
+										<div class="try_rc_mob_img">
+											<img src="/assets/rs4.png" alt="mobail">
+											<h5>Sale</h5>
+											<a href="#"><i class="fa fa-heart"></i></a>
+										</div>
+										<div class="try_rc_mob_img_cont">
+											<h2>Mobile 101</h2>
+											<h3>(2GB  |  32GB)</h3>
+										</div>
+										<div class="try_rc_mob_img_cont_bottom">
+											<p>$6499</p>	<del>$7500</del>
+											<div class="try_mob_btn_wrapper">	<a href="#">Buy Now</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+ 

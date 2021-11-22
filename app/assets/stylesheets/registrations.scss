@@ -1,0 +1,23 @@
+
+#backSignupDiv{
+    position:absolute;
+    top:0px;
+    right:35%;
+    bottom:0px;
+    left:0px;
+    background-image: url('mob_log3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#signupDiv{
+    position: absolute;
+    width: 500px;
+    height: 600px;
+    right: 2%;
+    
+    padding: 20px 20px;
+    background-color: rgba(255,255,255,0.9);
+    box-shadow: 2px 4px 4px 2px rgba(0,0,0,0.2);
+    
+}

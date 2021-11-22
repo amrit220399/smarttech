@@ -1,0 +1,31 @@
+<div class="sidenav">
+   <a href="/">SmarTTech</a>
+   <br/>
+    <a href="#">Admin Profile</a>
+   
+   <%= link_to 'Store', stores_path, remote: true%>
+    <a href="#">Users</a>
+     <a href="#">Orders</a>
+    <a href="#">Add Admin</a>
+
+</div>
+
+<div class="main">
+<div class="row">
+<div class="col col-sm-10 col-md-10">
+ <h1>Dashboard</h1>
+  <p>Welcome Admin </p>
+</div>
+<div class="col col-sm-2 col-md-2">
+ <%= link_to 'Logout Admin', admin_logout_admin_path , class: "btn btn-danger", style: "color:white"%>
+</div>
+</div>
+<br/><br/>
+<div class=container>
+  <div class="myBoard">
+ 
+  </div>
+</div>
+</div>
+ 
+ 

@@ -1,0 +1,105 @@
+
+		
+		<!--try top banner main wrapper End-->
+		<div class="main-header">
+			<div class="container">
+				<div class="row">
+					<!-- Main Box -->
+					
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+						<div class="try_logo_wrapper">
+							<a href="/home/index" style="background-color: transparent">
+								<img src="/assets/logo_smart.png" alt="logo" height="60px" width="100px">
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+						<div class="main-box">
+							<div class="main-box">
+								<div class="auto-container">
+									<div class="outer-container clearfix">
+										<!--Logo Box-->
+										<!--Nav Outer-->
+										<div class="nav-outer clearfix">
+											<!-- Main Menu -->
+											<nav class="main-menu">
+												<div class="navbar-header">
+													<!-- Toggle Button -->
+													<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span>
+														<span class="icon-bar"></span>
+														<span class="icon-bar"></span>
+													</button>
+												</div>
+												<div class="navbar-collapse collapse scroll-nav clearfix">
+													<ul class="navigation clearfix">
+														<li><a href="/home/index">Home</a>
+														</li>
+														<li><a href="/home/mobile_gallery">Mobile</a>
+														</li>
+														<li><a href="#"><i class="material-icons">favorite</i></a></li>
+														<% if session[:cart_id].nil? %>
+															<li><a href="/cart/empty"><i class="material-icons">shopping_cart</i></a></li>
+														<% else %>
+															<li><%= link_to '<i class="material-icons">shopping_cart</i>'.html_safe, cart_path(:id=> session[:cart_id]) %></li>
+															
+														<% end %>
+													
+														<li><a href="#"><i class="material-icons">card_travel</i></a></li>
+														<li><a href="/users/edit"><i class="material-icons">person</i></a></li>
+
+														<li><a href="/admin/login_admin" style="float:right">Admin</a></li>
+
+										
+													</ul>
+												</div>
+											</nav>
+											<!-- Main Menu End-->
+										</div>
+										<!--Nav Outer End-->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<br/><br/>
+
+<div class="container">
+	<div class="row justify-content-center  align-items-center">
+		<% count=0 %>
+		<%  @stores.each do |store| %>
+	<% if (count%4) == 0 %>
+	</div>
+	<br/><br/><br/>
+	<div class="row justify-content-center  align-items-center">
+	<%end%>
+	<% count+=1%>
+	
+	<div class="col col-sm-3 col-md-3">
+
+		<div class="card" style="min-height:590px;">
+			<%= image_tag(store.product_image ,height:"300px",width:"50px", class:"card-img-top") %>
+			
+			<div class="card-body">
+				<big class="card-title"><%=store.product_name%></big>
+				<h4 class="card-text"><%=store.configuration%></h4>
+				<br/>
+				<p class="card-text text-danger"><strike>&#8377;<%=store.mrp%></strike></p>
+				<h3 class="card-text text-warning">&#8377;<%=store.sell_price%></h3>
+			
+			</div>
+			
+			<div class="card-body">
+			<%= button_to 'Add to Cart', cart_items_path(:store_id => store.id), class:"btn btn-warning",style:"color:white" %> 
+			
+			</div>
+		</div>
+	</div>
+	
+<% end %>
+</div>
+</div>
+
+  

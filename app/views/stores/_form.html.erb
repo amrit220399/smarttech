@@ -1,0 +1,73 @@
+<div class="container">
+<%= form_with(model: store, local: true) do |form| %>
+  <% if store.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(store.errors.count, "error") %> prohibited this store from being saved:</h2>
+
+      <ul>
+      <% store.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <% if store.product_image.attached? %>
+         <%= image_tag(store.product_image, width: "75px", height: "75px") %>
+            <% else %>
+        <%= image_tag("logo_smart.png", alt: "No product image", width: "75px", height: "75px") %>
+     <% end %>
+  <div class="form-group">
+    <%= form.label :product_image %>
+    <%= form.file_field :product_image, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :product_name %>
+    <%= form.text_field :product_name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :product_type %>
+    <%= form.text_field :product_type, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :brand %>
+    <%= form.text_field :brand , class: "form-control"%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :color %>
+    <%= form.text_field :color , class: "form-control"%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :configuration %>
+    <%= form.text_field :configuration, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_field :description, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :launch_year %>
+    <%= form.number_field :launch_year, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :mrp %>
+    <%= form.text_field :mrp , class: "form-control"%>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :sell_price %>
+    <%= form.text_field :sell_price, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Add Product", class: "btn btn-success" %>
+  </div>
+<% end %>
+</div>

@@ -1,0 +1,55 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<h3>My Store</h3>
+<br/>
+<table class="table table-striped">
+  <thead>
+    <tr>
+    <th>PID</th>
+    <th>Product Image</th>
+      <th>Product name</th>
+      <th>Product type</th>
+      <th>Brand</th>
+      <th>Color</th>
+      <th>Configuration</th>
+      <th>Description</th>
+      <th>Launch year</th>
+      <th>Mrp</th>
+      <th>Sell price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stores.each do |store| %>
+      <tr>
+       <td><%= store.id %></td>
+        <td class="input-field col s6 m6">
+            <% if store.product_image.attached? %>
+         <%= image_tag(store.product_image, width: "75px", height: "75px") %>
+            <% else %>
+        <%= image_tag("logo_smart.png", alt: "No product image", width: "75px", height: "75px") %>
+            <% end %>
+        </td>
+        <td><%= store.product_name %></td>
+        <td><%= store.product_type %></td>
+        <td><%= store.brand %></td>
+        <td><%= store.color %></td>
+        <td><%= store.configuration %></td>
+        <td><%= store.description %></td>
+        <td><%= store.launch_year %></td>
+        <td><%= store.mrp %></td>
+        <td><%= store.sell_price %></td>
+        <td><%= link_to 'Show', store %></td>
+        <td><%= link_to 'Edit', edit_store_path(store) %></td>
+        <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_store_path, class: "btn btn-default" %>
+</div>

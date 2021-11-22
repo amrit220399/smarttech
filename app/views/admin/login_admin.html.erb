@@ -1,0 +1,21 @@
+
+<div id="backAdminLoginDiv"> </div>
+<div class="container" id="adminLoginDiv"> 
+
+<h1>Admin Login</h1>
+<%= flash[:msg] %>
+
+<%= form_with local: true do |f| %>
+    <div class="form-group">
+    <%= f.label :adminuser, "Username"%>
+    <%= f.text_field :adminuser, class: "form-control" %>
+    </div>
+    <div class="form-group">
+    <%= f.label :adminpassword, "Password"%>
+    <%= f.password_field :adminpassword , class: "form-control"%>
+    </div>
+    <%= f.submit "Admin Login", class:"btn btn-primary" %>
+
+<% end %>
+
+</div>

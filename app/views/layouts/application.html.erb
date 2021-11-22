@@ -6,13 +6,23 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    
+    <div id="preloader">
+		<div id="status">
+			<img src="/assets/loder.gif" id="preloader_image" alt="loader">
+		</div>
+	</div>
+	<!-- Top Scroll Start -->	
+	<a href="javascript:" id="return-to-top"><i class="fa fa-angle-up"></i></a>
+	<!-- Top Scroll End -->
     <%= yield %>
+   
   </body>
 </html>
